@@ -1,0 +1,193 @@
+@media (max-width: 768px) {
+    /* body start */
+  
+    body {
+      background-image: url("/assets/images/pattern-background-mobile-light.svg");
+  
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color: var(--light-grey);
+  
+      display: grid;
+      place-content: center;
+    }
+  
+    /* body end */
+  
+    /* menu header start*/
+    .header {
+      display: flex;
+      flex-direction: row;
+      justify-content:flex-end;
+      width: 20.438rem;
+      padding-top: 1.625rem;
+      margin-bottom: 2rem;
+    }
+    
+    
+    .header__buttons {
+      width: 5rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+  
+    .header__button {
+      border: none;
+    }
+  
+    .header__button:first-of-type,
+    .header__button:last-of-type {
+      width: 1rem;
+      height: 1rem;
+      background: none;
+  
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    #lightModeButton {
+      margin-right: 0.6rem;
+    }
+    #darkModeButton {
+      margin-left: 0.5rem;
+    }
+  
+    #toggleButton {
+      background: var(--primary-purple);
+      border-radius: 10px;
+      width: 2rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+  
+      padding: 0.25rem;
+    }
+  
+    .header__button-slider {
+      width: 0.75rem;
+      height: 0.75rem;
+      background-color: var(--pure-white);
+      border-radius: 50%;
+    }
+  
+    /* menu header end*/
+  
+    /* main start  */
+    .main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .main__content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+  
+      width: 20.438rem;
+    }
+  
+    .content__left,
+    .quiz__content {
+      display: flex;
+      flex-direction: column;
+  
+      margin-bottom: 2.5rem;
+    }
+  
+    .content__title {
+      font-size: var(--font-size-heading-m);
+      line-height: var(--line-height-heading-m);
+      margin-bottom: 1rem;
+    }
+  
+    .content__subtitle {
+      font-style: var(--font-weight-regular-italic);
+    }
+  
+    /* content menu start */
+  
+    .content__menu {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .menu__item {
+      width: 20.438rem;
+      height: 4rem;
+  
+      padding: 0.75rem;
+  
+      border-radius: 0.75rem;
+  
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+  
+      background: var(--pure-white);
+  
+      text-decoration: none;
+      color: black;
+    }
+  
+    .menu__item:not(:last-of-type) {
+      margin-bottom: 0.75rem;
+    }
+  
+    .menu__item-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+  
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+  
+      border-radius: 0.313rem;
+  
+      margin-right: 1rem;
+    }
+  
+    .menu__item-icon--very-pale-peach,
+    .header__title-icon--very-pale-peach {
+      background: var(--very-pale-peach);
+    }
+  
+    .menu__item-icon--bright-mint-green,
+    .header__title-icon--bright-mint-green {
+      background: var(--bright-mint-green);
+    }
+  
+    .menu__item-icon--bright-blue,
+    .header__title-icon--bright-blue {
+      background: var(--bright-blue);
+    }
+  
+    .menu__item-icon--purple,
+    .header__title-icon--purple {
+      background: var(--pale-lavender);
+    }
+  
+    .menu__item-icon__img {
+      width: 1.786rem;
+      height: 1.786rem;
+    }
+  
+    .menu__item-title {
+      font-weight: var(--font-weight-medium);
+      text-transform: capitalize;
+    }
+  
+    /* content menu end */
+  
+    /* Quizz start */
+   
+  
+    /* main end  */
+  }
+  

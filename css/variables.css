@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+:root {
+  /* colors */
+
+  /* Primary */
+
+  --primary-purple: #a729f5;
+  --dark-blue-grey: #313e51;
+  --medium-blue-grey: #3b4d66;
+  --light-grey-blue: #626c7f;
+  --vivid-red: #ee5454;
+  --bright-teal: #26d782;
+  
+  
+  /* icons menu */
+  --very-pale-peach: #FFF1E9;
+  --bright-mint-green:#E0FDEF;
+  --bright-blue:#EBF0FF;
+  --pale-lavender: #F6E7FF;
+
+
+  /* Neutral */
+  --soft-blue: #abc1e1;
+  --light-grey: #f4f6fa;
+  --pure-white: #ffffff;
+
+  /* Typography */
+
+  /* Font sizes */
+  --font-size-heading-l: 4rem;
+  --font-size-heading-m: 2.125rem;
+  --font-size-heading-s: 1.75rem;
+  --font-size-body-s: 0.75rem;
+
+  /* Line heights */
+  --line-height-heading-l: 1; /* 100% */
+  --line-height-heading-m: 1; /* 100% */
+  --line-height-heading-s: 1; /* 100% */
+  --line-height-body-s: 1.5; /* 150% */
+
+  /* Font families and weights */
+  --font-family-rubik: "Rubik", sans-serif;
+  --font-weight-regular: normal; /* Regular */
+  --font-weight-regular-italic: italic; /* Regular */
+  --font-weight-medium: 500; /* Medium */
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <link rel="stylesheet" href="/css/media_queries/mobile/quiz/quiz.css">
+    <script defer src="/main.js" type="module"></script>
+    <title>Frontend Mentor | Frontend quiz app</title>
+</head>
+
+<body>
+
+    <header class="header">
+
+        <div class="header__title">
+            <div class="header__title-icon header__title-icon--bright-blue">
+                <img class="header__title-icon__img " src="/assets/images/icon-js.svg" alt="javascript icon">
+            </div>
+            <h2>JavaScript</h2>
+        </div>
+
+        <div class="header__buttons">
+
+            <button id="lightModeButton" class="header__button">
+                <img src="/assets/images/icon-sun-dark.svg" alt="Light Mode Icon">
+            </button>
+
+            <button id="toggleButton" class="header__button">
+                <span class="header__button-slider" id="header__button-slider"></span>
+            </button>
+
+            <button id="darkModeButton" class="header__button">
+                <img src="/assets/images/icon-moon-dark.svg" alt="Dark Mode Icon">
+            </button>
+
+        </div>
+    </header>
+    <!-- Quiz menu start -->
+
+    <main class="main">
+
+        <div class="main__content">
+            <div class="quiz__content" id="quiz__content">
+
+            </div>
+        </div>
+
+    </main>
+</body>
+
+</html>

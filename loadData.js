@@ -24,8 +24,8 @@ function getTitlesAndIcons(data) {
 }
 
 
-
 function getNumberOfQuestionsPerTheme(data, title) {
+
     const quiz = data.quizzes.find(quiz => quiz.title === title);
 
     return quiz ? quiz.questions.length : 0;
@@ -52,7 +52,7 @@ function getThemeDetails(data, title) {
 
 async function getQuizData() {
     const quizData = await loadData();
-    
+
     if (quizData) {
         return quizData
     } else {
@@ -61,4 +61,5 @@ async function getQuizData() {
     }
 }
 
-export { getQuizData, getTitles,getTitlesAndIcons, getNumberOfQuestionsPerTheme, getThemeDetails }
+
+export { getQuizData, getTitles, getTitlesAndIcons, getNumberOfQuestionsPerTheme, getThemeDetails }

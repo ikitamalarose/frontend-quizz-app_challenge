@@ -21,7 +21,7 @@ function createMenuItem(title, icon) {
     const contentMenu = document.getElementById('content__menu');
     const menuItem = document.createElement('a');
 
-    menuItem.href = `../view/${title.toLowerCase()}-page.html`;
+    menuItem.href = `/view/${title.toLowerCase()}-page.html`;
     menuItem.classList.add('menu__item');
 
     const menuItemIcon = document.createElement('div');

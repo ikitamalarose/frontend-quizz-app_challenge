@@ -15,9 +15,11 @@ const colorClassMap = {
 
 let current_data = null;
 let questions_lenth = null;
+let score_icon = null;
 
 /* menu list start */
 function createMenuItem(title, icon) {
+    score_icon = icon;
     const contentMenu = document.getElementById('content__menu');
     const menuItem = document.createElement('a');
 
@@ -342,7 +344,6 @@ function createScoreElement() {
     quiz__actions.addEventListener('click', function () {
         reset();
     });
-
 }
 
 function reset(){

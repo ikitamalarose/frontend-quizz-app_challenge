@@ -59,14 +59,14 @@ async function loadDataPerPages() {
                 break;
             case "accessibility-page":
 
-                theme = "JavaScript";
+                theme = "Accessibility";
                 quiz = getThemeDetails(quizzes, theme);
                 createContentQuestion(quiz.questions[0], getNumberOfQuestionsPerTheme(quizzes, theme),quiz);
 
                 break;
             case "javascript-page":
 
-                theme = "Accessibility";
+                theme = "JavaScript";
                 quiz = getThemeDetails(quizzes, theme);
                 createContentQuestion(quiz.questions[0], getNumberOfQuestionsPerTheme(quizzes, theme),quiz);
 

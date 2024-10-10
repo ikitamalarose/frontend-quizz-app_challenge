@@ -27,7 +27,7 @@ async function loadDataPerPages() {
 
     const quizzes = await getQuizData();
 
-    /*  try { */
+     try {
 
     if (quizzes) {
         let filename = getFragmentId();
@@ -73,9 +73,9 @@ async function loadDataPerPages() {
 
     }
 
-    /* } catch (error) {
+    } catch (error) {
         console.error('Failed to load data:', error.message);
-    } */
+    }
 }
 
 async function loadAndCreateMenuItems() {
@@ -103,4 +103,8 @@ async function loadAndCreateMenuItems() {
 
 
 /* loadAndCreateMenuItems(); */
-loadDataPerPages();
+
+document.addEventListener('DOMContentLoaded', () => {
+    loadDataPerPages();
+});
+

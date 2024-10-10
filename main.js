@@ -8,6 +8,9 @@ import { createContentQuestion } from "./js/quizz.js";
 
 import { loadAndCreateMenuItems, getFragmentId } from "./js/menu.js";
 
+import { toggleButtonStyle } from "./js/theme-toggle.js";
+
+
 async function loadDataPerPages() {
 
     const quizzes = await getQuizData();
@@ -60,6 +63,6 @@ async function loadDataPerPages() {
         console.error('Failed to load data:', error.message);
     }
 }
-
+toggleButtonStyle();
 loadDataPerPages();
 

@@ -310,7 +310,7 @@ function createScoreElement() {
     contentIcon.appendChild(contentIcon_img);
 
     const card__title = document.createElement('p');
-    card__title.textContent = "CSS";
+    card__title.textContent = `${current_data}`;
     card__title.classList.add('card__title');
 
     card_header.appendChild(card__title);

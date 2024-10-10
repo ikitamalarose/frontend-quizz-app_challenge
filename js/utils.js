@@ -232,9 +232,9 @@ function toggleOptionClickability() {
 
     allOptions.forEach(option => {
         if (submitButtonText === "Next Question") {
-            option.style.pointerEvents = "none"; // Désactive les clics
+            option.style.pointerEvents = "none"; 
         } else if (submitButtonText === "Submit Answer") {
-            option.style.pointerEvents = "auto"; // Réactive les clics
+            option.style.pointerEvents = "auto";
         }
     });
 }
@@ -248,18 +248,12 @@ function fetchSubmitButtonText() {
 
 function loadNextQuestion() {
     clearQuizContent();
-    currentQuestionIndex++; // Incrémentez l'index pour passer à la question suivante
+    currentQuestionIndex++;
 
-
-    /* console.table(data.questions[1]); */
-    // Vérifiez si nous avons encore des questions disponibles
     if (currentQuestionIndex < questions_lenth) {
         const nextQuiz = current_data.questions[currentQuestionIndex];
-        createContentQuestion(nextQuiz, questions_lenth, current_data); // Charge la prochaine question
+        createContentQuestion(nextQuiz, questions_lenth, current_data);
     } else {
-        // Optionnel : Ajoutez une logique pour gérer la fin du quiz
-
-        console.log("Vous avez terminé le quiz !");
         clearQuizContent();
         createScoreElement();
     }
@@ -268,7 +262,7 @@ function loadNextQuestion() {
 function clearQuizContent() {
     const quizContent = document.querySelector('.quiz__content');
     if (quizContent) {
-        quizContent.innerHTML = ''; // Vide tout le contenu à l'intérieur de l'élément
+        quizContent.innerHTML = '';
     }
 }
 
@@ -346,7 +340,6 @@ function createScoreElement() {
     quiz__actions.appendChild(quiz__submit);
 
     quiz__actions.addEventListener('click', function () {
-        console.log("Il veut encore jouer");
         reset();
     });
 

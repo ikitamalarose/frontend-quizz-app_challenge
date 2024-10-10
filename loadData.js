@@ -16,6 +16,13 @@ function getTitles(data) {
     return data.quizzes.map(quiz => quiz.title);
 }
 
+
+function getIconByTheme(data, themeTitle) {
+    const quiz = data.quizzes.find(quiz => quiz.title === themeTitle);
+    return quiz ? quiz.icon : null;
+}
+
+
 function getTitlesAndIcons(data) {
     return data.quizzes.map(quiz => ({
         title: quiz.title,
@@ -62,4 +69,4 @@ async function getQuizData() {
 }
 
 
-export { getQuizData, getTitles, getTitlesAndIcons, getNumberOfQuestionsPerTheme, getThemeDetails }
+export { getQuizData, getTitles, getTitlesAndIcons, getNumberOfQuestionsPerTheme, getThemeDetails,getIconByTheme }

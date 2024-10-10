@@ -15,11 +15,9 @@ const colorClassMap = {
 
 let current_data = null;
 let questions_lenth = null;
-let score_icon = null;
 
 /* menu list start */
 function createMenuItem(title, icon) {
-    score_icon = icon;
     const contentMenu = document.getElementById('content__menu');
     const menuItem = document.createElement('a');
 
@@ -234,7 +232,7 @@ function toggleOptionClickability() {
 
     allOptions.forEach(option => {
         if (submitButtonText === "Next Question") {
-            option.style.pointerEvents = "none"; 
+            option.style.pointerEvents = "none";
         } else if (submitButtonText === "Submit Answer") {
             option.style.pointerEvents = "auto";
         }
@@ -299,7 +297,9 @@ function createScoreElement() {
     card_header.appendChild(contentIcon);
 
     const contentIcon_img = document.createElement('img');
-    contentIcon_img.src = `/assets/images/icon-${current_data.title.toLowerCase()}.svg`;
+    contentIcon_img.src = current_data.title.toLowerCase() === "javascript"
+        ? '/assets/images/icon-js.svg'
+        : `/assets/images/icon-${current_data.title.toLowerCase()}.svg`;
     contentIcon_img.alt = `${current_data.title} icon`;
     contentIcon_img.classList.add('menu__item-icon__img');
 
@@ -346,7 +346,7 @@ function createScoreElement() {
     });
 }
 
-function reset(){
+function reset() {
     clearQuizContent();
     score = 0;
     window.location.href = '/index.html';

@@ -8,7 +8,6 @@ import { createContentQuestion } from "./js/quizz.js";
 
 import { loadAndCreateMenuItems, getFragmentId } from "./js/menu.js";
 
-
 async function loadDataPerPages() {
 
     const quizzes = await getQuizData();

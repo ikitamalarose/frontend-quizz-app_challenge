@@ -1,5 +1,6 @@
 import {
     getColorClass,
+    getColorClassCard,
     removeSelectedClass,
     toggleOptionSelection,
     createCorrectIconElement,
@@ -33,114 +34,114 @@ function createContentQuestion(quiz, total_question, quizzes) {
     const letters = ['A', 'B', 'C', 'D'];
     const quiz__content = document.getElementById('quiz__content');
 
-    const quiz__question_number = document.createElement('p');
-    quiz__question_number.textContent = `Question ${currentQuestionIndex + 1} of ${total_question}`;
-    quiz__question_number.classList.add('quiz__question-number');
+    const question_number = document.createElement('p');
+    question_number.textContent = `Question ${currentQuestionIndex + 1} of ${total_question}`;
+    question_number.classList.add('question-number');
 
-    const quiz__question = document.createElement('p');
-    quiz__question.textContent = `${quiz.question}`;
-    quiz__question.classList.add('quiz__question');
-    quiz__content.appendChild(quiz__question_number);
-    quiz__content.appendChild(quiz__question);
+    const question_text = document.createElement('p');
+    question_text.textContent = `${quiz.question}`;
+    question_text.classList.add('question-text');
+    quiz__content.appendChild(question_number);
+    quiz__content.appendChild(question_text);
 
-    const quiz__options = document.createElement('div');
-    quiz__options.classList.add('quiz__options');
-    quiz__content.appendChild(quiz__options);
+    const question_options_container = document.createElement('div');
+    question_options_container.classList.add('question-options-container');
+    quiz__content.appendChild(question_options_container);
 
     let i = 0;
     quiz.options.forEach(element => {
 
-        const quiz__option = document.createElement('div');
-        quiz__option.classList.add('quiz__option');
-        quiz__options.appendChild(quiz__option);
+        const question_option = document.createElement('div');
+        question_option.classList.add('question-option');
+        question_options_container.appendChild(question_option);
 
-        quiz__option.addEventListener('click', function () {
+        question_option.addEventListener('click', function () {
             removeSelectedClass();
-            handleOptionClick(quiz__option);
+            handleOptionClick(question_option);
         });
 
-        const quiz__input = document.createElement('p');
-        quiz__input.textContent = letters[i];
-        quiz__input.classList.add('quiz__input');
-        quiz__option.appendChild(quiz__input);
+        const question_option_letter = document.createElement('p');
+        question_option_letter.textContent = letters[i];
+        question_option_letter.classList.add('question-option-letter');
+        question_option.appendChild(question_option_letter);
 
-        const quiz__label = document.createElement('p');
-        quiz__label.classList.add('quiz__label');
-        quiz__label.textContent = element;
-        quiz__option.appendChild(quiz__label);
+        const question_option_text = document.createElement('p');
+        question_option_text.classList.add('question-option-text');
+        question_option_text.textContent = element;
+        question_option.appendChild(question_option_text);
 
         if (answer == element) {
-            quiz__option.appendChild(createCorrectIconElement());
+            question_option.appendChild(createCorrectIconElement());
         } else {
-            quiz__option.appendChild(createIncorrectIconElement());
+            question_option.appendChild(createIncorrectIconElement());
         }
         i = i + 1;
 
     });
 
-    const quiz__actions = document.createElement('div');
-    quiz__actions.classList.add('quiz__actions');
-    quiz__options.appendChild(quiz__actions);
+    const question_actions = document.createElement('div');
+    question_actions.classList.add('question-actions');
+    question_options_container.appendChild(question_actions);
 
 
-    const quiz__submit = document.createElement('button');
-    quiz__submit.textContent = "Submit Answer";
-    quiz__submit.classList.add('quiz__submit-button');
+    const question_submit_button = document.createElement('button');
+    question_submit_button.textContent = "Submit Answer";
+    question_submit_button.classList.add('question-submit-button');
 
 
-    quiz__actions.appendChild(quiz__submit);
+    question_actions.appendChild(question_submit_button);
 
-    quiz__actions.addEventListener('click', function () {
+    question_actions.addEventListener('click', function () {
         isCorrectAnswer(currentlySelectedOption);
         toggleOptionClickability();
     });
 }
 
-function handleOptionClick(quiz__option) {
-    const selectedOptionLabelText = quiz__option.querySelector('.quiz__label').textContent;
+function handleOptionClick(question_option) {
+    const selectedOptionLabelText = question_option.querySelector('.question-option-text').textContent;
 
-    currentlySelectedOption = quiz__option;
+    currentlySelectedOption = question_option;
     selectedOptionLabel = selectedOptionLabelText;
 
-    toggleOptionSelection(quiz__option);
+    toggleOptionSelection(question_option);
 }
 
-function isCorrectAnswer(quiz__option) {
-        if (currentlySelectedOption!=null) {
-            const submit_text_content = fetchSubmitButtonText();
+function isCorrectAnswer(question_option) {
+    if (currentlySelectedOption != null) {
+        const submit_text_content = fetchSubmitButtonText();
 
-            if (submit_text_content == "Submit Answer") {
-                updateSubmitButtonText();
-                removeSelectedClass();
+        if (submit_text_content == "Submit Answer") {
+            updateSubmitButtonText();
+            removeSelectedClass();
 
-                if (selectedOptionLabel === answer) {
-                    markAsCorrect(quiz__option);
-                    score++;
-                } else {
-                    markAsIncorrect(quiz__option);
-                    revealCorrectAnswer();
-                }
-                
-
+            if (selectedOptionLabel === answer) {
+                markAsCorrect(question_option);
+                score++;
             } else {
-                loadNextQuestion();
-                currentlySelectedOption = null;
+                markAsIncorrect(question_option);
+                revealCorrectAnswer();
             }
 
-        }else{
-            return;
+
+        } else {
+            loadNextQuestion();
+            currentlySelectedOption = null;
         }
+
+    } else {
+        return;
+    }
 
 }
 
 function revealCorrectAnswer() {
-    const allOptions = document.querySelectorAll('.quiz__option');
+    const allOptions = document.querySelectorAll('.question-option');
 
     allOptions.forEach(option => {
-        let label = option.querySelector('.quiz__label').textContent;
+        let label = option.querySelector('.question-option-text').textContent;
 
         if (label == answer) {
-            option.querySelector('.quiz__icon').style.visibility = "visible";
+            option.querySelector('.question__icon').style.visibility = "visible";
         }
     });
 }
@@ -161,78 +162,78 @@ function loadNextQuestion() {
 function createScoreElement() {
     const quiz__content = document.getElementById('quiz__content');
 
-    const quiz__message = document.createElement('p');
-    quiz__message.textContent = 'Quiz completed';
-    quiz__message.classList.add('quiz__message');
-    quiz__content.appendChild(quiz__message);
+    const score_message = document.createElement('p');
+    score_message.textContent = 'Quiz completed';
+    score_message.classList.add('score-message');
+    quiz__content.appendChild(score_message);
 
-    const quiz__message_span = document.createElement('strong');
-    quiz__message_span.textContent = "You scored...";
-    quiz__message_span.classList.add('quiz__message_span');
-    quiz__content.appendChild(quiz__message_span);
+    const score_message_highlight = document.createElement('strong');
+    score_message_highlight.textContent = "You scored...";
+    score_message_highlight.classList.add('score-message-highlight');
+    quiz__content.appendChild(score_message_highlight);
 
 
-    const card = document.createElement('div');
-    card.classList.add('card');
+    const score_card = document.createElement('div');
+    score_card.classList.add('score-card');
 
-    quiz__content.appendChild(card);
+    quiz__content.appendChild(score_card);
 
-    const card_header = document.createElement('div');
-    card_header.classList.add('card_header');
+    const score_card_header = document.createElement('div');
+    score_card_header.classList.add('score-card-header');
 
-    card.appendChild(card_header);
+    score_card.appendChild(score_card_header);
 
-    const contentIcon = document.createElement('div');
-    const colorClass = getColorClass(current_data.title);
-    contentIcon.classList.add('menu__item-icon', colorClass);
-    card_header.appendChild(contentIcon);
+    const score_icon = document.createElement('div');
+    const colorClass = getColorClassCard(current_data.title);
+    score_icon.classList.add('score-icon', colorClass);
+    score_card_header.appendChild(score_icon);
 
-    const contentIcon_img = document.createElement('img');
-    contentIcon_img.src = current_data.title.toLowerCase() === "javascript"
+    const score_icon_img = document.createElement('img');
+    score_icon_img.src = current_data.title.toLowerCase() === "javascript"
         ? '/assets/images/icon-js.svg'
         : `/assets/images/icon-${current_data.title.toLowerCase()}.svg`;
-    contentIcon_img.alt = `${current_data.title} icon`;
-    contentIcon_img.classList.add('menu__item-icon__img');
+    score_icon_img.alt = `${current_data.title} icon`;
+    score_icon_img.classList.add('score-icon-img');
 
-    contentIcon.appendChild(contentIcon_img);
+    score_icon.appendChild(score_icon_img);
 
-    const card__title = document.createElement('p');
-    card__title.textContent = `${current_data.title}`;
-    card__title.classList.add('card__title');
+    const score_card_title = document.createElement('p');
+    score_card_title.textContent = `${current_data.title}`;
+    score_card_title.classList.add('score-card-title');
 
-    card_header.appendChild(card__title);
+    score_card_header.appendChild(score_card_title);
 
-    const card__content = document.createElement('div');
-    card__content.classList.add('card__content');
+    const score_card_content = document.createElement('div');
+    score_card_content.classList.add('score-card-content');
 
-    card.appendChild(card__content);
+    score_card.appendChild(score_card_content);
 
-    const card__score = document.createElement('p');
-    card__score.textContent = score;
-    card__score.classList.add('card__score');
+    const score_value = document.createElement('p');
+    score_value.textContent = score;
+    score_value.classList.add('score-value');
 
-    card__content.appendChild(card__score);
+    score_card_content.appendChild(score_value);
 
-    const card__score_span = document.createElement('span');
-    card__score_span.textContent = `out of ${questions_lenth}`;
-    card__score_span.classList.add('card__score_span');
+    const score_total = document.createElement('span');
+    score_total.textContent = `out of ${questions_lenth}`;
+    score_total.classList.add('score-total');
 
-    card__content.appendChild(card__score_span);
-
-
-    const quiz__actions = document.createElement('div');
-    quiz__actions.classList.add('quiz__actions');
-    quiz__content.appendChild(quiz__actions);
+    score_card_content.appendChild(score_total);
 
 
-    const quiz__submit = document.createElement('button');
-    quiz__submit.textContent = "Play Again";
-    quiz__submit.classList.add('quiz__submit-button');
+    const score_actions = document.createElement('div');
+    score_actions.classList.add('score-actions');
+    quiz__content.appendChild(score_actions);
 
 
-    quiz__actions.appendChild(quiz__submit);
+    const score_restart_button = document.createElement('button');
+    score_restart_button.textContent = "Play Again";
+    score_restart_button.classList.add('score-restart-button');
 
-    quiz__actions.addEventListener('click', function () {
+
+    score_actions.appendChild(score_restart_button);
+
+    score_actions.addEventListener('click', function () {
         reset();
     });
 }

@@ -9,7 +9,7 @@
     font-size: var(--font-size-body-s);
     font-weight: var(--font-weight-regular);
     line-height: var(--line-height-body-s);
-    color: var(--medium-blue-grey);
+    color: var( --dark-blue-grey);
   }
   
   .attribution {

@@ -5,60 +5,71 @@ const colorClassMap = {
     "Accessibility": "menu__item-icon--purple"
 };
 
+const colorClassCard = {
+    "HTML": "score-icon--very-pale-peach",
+    "CSS": "score-icon--bright-mint-green",
+    "JavaScript": "score-icon--bright-blue",
+    "Accessibility": "score-icon--purple"
+}
+
 function getColorClass(title) {
     return colorClassMap[title] || "menu__item-icon--default";
 }
 
+function getColorClassCard(title) {
+    return colorClassCard[title] || "score-icon--default";
+}
+
 function removeSelectedClass() {
-    const allOptions = document.querySelectorAll('.quiz__option');
+    const allOptions = document.querySelectorAll('.question-option');
 
     allOptions.forEach(option => {
-        option.classList.remove('quiz__option--selected');
+        option.classList.remove('question-option--selected');
     });
 }
 
-function toggleOptionSelection(quiz__option) {
-    quiz__option.classList.toggle('quiz__option--selected');
+function toggleOptionSelection(question_option) {
+    question_option.classList.toggle('question-option--selected');
 }
 
 function createCorrectIconElement() {
-    const icon = document.createElement('img');
-    icon.src = "/assets/images/icon-correct.svg";
-    icon.alt = "correct icon";
-    icon.classList.add("quiz__icon", "quiz__icon-correct");
+    const question_icon = document.createElement('img');
+    question_icon.src = "/assets/images/icon-correct.svg";
+    question_icon.alt = "correct icon";
+    question_icon.classList.add("question__icon", "question__icon-correct");
 
-    return icon;
+    return question_icon;
 }
 
 function createIncorrectIconElement() {
-    const icon = document.createElement('img');
-    icon.src = "/assets/images/icon-incorrect.svg";
-    icon.alt = "incorrect icon";
-    icon.classList.add("quiz__icon", "quiz__icon-incorrect");
+    const question_icon = document.createElement('img');
+    question_icon.src = "/assets/images/icon-incorrect.svg";
+    question_icon.alt = "incorrect icon";
+    question_icon.classList.add("question__icon", "question__icon-incorrect");
 
-    return icon;
+    return question_icon;
 }
 
-function markAsCorrect(quiz__option) {
-    quiz__option.classList.toggle('quiz__option--correct');
-    quiz__option.querySelector('.quiz__icon').style.visibility = "visible";
+function markAsCorrect(question_option) {
+    question_option.classList.toggle('question-option--correct');
+    question_option.querySelector('.question__icon').style.visibility = "visible";
 
 }
 
-function markAsIncorrect(quiz__option) {
-    quiz__option.classList.toggle('quiz__option--incorrect');
+function markAsIncorrect(question_option) {
+    question_option.classList.toggle('question-option--incorrect');
 
-    quiz__option.querySelector('.quiz__icon').style.visibility = "visible";
+    question_option.querySelector('.question__icon').style.visibility = "visible";
 
 }
 
 function updateSubmitButtonText() {
-    document.querySelector('.quiz__submit-button').textContent = "Next Question";
+    document.querySelector('.question-submit-button').textContent = "Next Question";
 }
 
 function toggleOptionClickability() {
-    const allOptions = document.querySelectorAll('.quiz__option');
-    const submitButtonText = document.querySelector('.quiz__submit-button').textContent;
+    const allOptions = document.querySelectorAll('.question-option');
+    const submitButtonText = document.querySelector('.question-submit-button').textContent;
 
     allOptions.forEach(option => {
         if (submitButtonText === "Next Question") {
@@ -70,7 +81,7 @@ function toggleOptionClickability() {
 }
 
 function fetchSubmitButtonText() {
-    let text = document.querySelector('.quiz__submit-button').textContent;
+    let text = document.querySelector('.question-submit-button').textContent;
 
     return text;
 }
@@ -84,6 +95,7 @@ function clearQuizContent() {
 
 export {
     getColorClass,
+    getColorClassCard,
     removeSelectedClass,
     toggleOptionSelection,
     createCorrectIconElement,

@@ -1,7 +1,7 @@
 const colorClassMap = {
     "HTML": "menu__item-icon--very-pale-peach",
     "CSS": "menu__item-icon--bright-mint-green",
-    "Javascript": "menu__item-icon--bright-blue",
+    "JavaScript": "menu__item-icon--bright-blue",
     "Accessibility": "menu__item-icon--purple"
 };
 

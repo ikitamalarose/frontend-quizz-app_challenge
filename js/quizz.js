@@ -1,5 +1,4 @@
 import {
-    getColorClass,
     getColorClassCard,
     removeSelectedClass,
     toggleOptionSelection,
@@ -10,7 +9,10 @@ import {
     updateSubmitButtonText,
     toggleOptionClickability,
     fetchSubmitButtonText,
-    clearQuizContent
+    clearQuizContent,
+    createWarningMessage,
+    showWarningMessage,
+    hideWarningMessage
 } from "./utils.js";
 
 
@@ -79,22 +81,18 @@ function createContentQuestion(quiz, total_question, quizzes) {
 
     });
 
-    const question_actions = document.createElement('div');
-    question_actions.classList.add('question-actions');
-    question_options_container.appendChild(question_actions);
-
-
     const question_submit_button = document.createElement('button');
     question_submit_button.textContent = "Submit Answer";
     question_submit_button.classList.add('question-submit-button');
 
+    question_options_container.appendChild(question_submit_button);
 
-    question_actions.appendChild(question_submit_button);
-
-    question_actions.addEventListener('click', function () {
+    question_submit_button.addEventListener('click', function () {
         isCorrectAnswer(currentlySelectedOption);
         toggleOptionClickability();
     });
+
+    createWarningMessage();
 }
 
 function handleOptionClick(question_option) {
@@ -104,6 +102,7 @@ function handleOptionClick(question_option) {
     selectedOptionLabel = selectedOptionLabelText;
 
     toggleOptionSelection(question_option);
+    hideWarningMessage();
 }
 
 function isCorrectAnswer(question_option) {
@@ -129,7 +128,7 @@ function isCorrectAnswer(question_option) {
         }
 
     } else {
-        return;
+        showWarningMessage();
     }
 
 }
@@ -220,20 +219,13 @@ function createScoreElement() {
 
     score_card_content.appendChild(score_total);
 
-
-    const score_actions = document.createElement('div');
-    score_actions.classList.add('score-actions');
-    quiz__content.appendChild(score_actions);
-
-
     const score_restart_button = document.createElement('button');
     score_restart_button.textContent = "Play Again";
     score_restart_button.classList.add('score-restart-button');
 
+    quiz__content.appendChild(score_restart_button);
 
-    score_actions.appendChild(score_restart_button);
-
-    score_actions.addEventListener('click', function () {
+    score_restart_button.addEventListener('click', function () {
         reset();
     });
 }

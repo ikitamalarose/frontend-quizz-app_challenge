@@ -70,7 +70,7 @@ function updateSubmitButtonText() {
 function toggleOptionClickability() {
     const allOptions = document.querySelectorAll('.question-option');
     const submitButton = document.querySelector('.question-submit-button');
-    
+
     if (!submitButton) {
         return;
     }
@@ -99,6 +99,42 @@ function clearQuizContent() {
     }
 }
 
+function createWarningMessage() {
+    const quiz__content = document.getElementById('quiz__content');
+
+    const warning_container = document.createElement('div');
+    warning_container.id = "warning-container";
+    warning_container.style.visibility = "hidden";
+
+    const warning_icon = document.createElement('img');
+    warning_icon.src = "/assets/images/icon-error.svg";
+    warning_icon.alt = "error icon";
+    warning_icon.classList.add('warning-icon');
+
+    const warning_message = document.createElement('p');
+    warning_message.textContent = "Please select an answer";
+    warning_container.classList.add('warning-message');
+
+    warning_container.append(warning_icon, warning_message);
+
+    quiz__content.appendChild(warning_container);
+
+}
+
+function showWarningMessage() {
+    const warningContainer = document.getElementById('warning-container');
+    if (warningContainer) {
+        warningContainer.style.visibility = "visible";
+    }
+}
+
+function hideWarningMessage() {
+    const warningContainer = document.getElementById('warning-container');
+    if (warningContainer) {
+        warningContainer.style.visibility = "hidden";
+    }
+}
+
 export {
     getColorClass,
     getColorClassCard,
@@ -111,5 +147,8 @@ export {
     updateSubmitButtonText,
     toggleOptionClickability,
     fetchSubmitButtonText,
-    clearQuizContent
+    clearQuizContent,
+    createWarningMessage,
+    showWarningMessage,
+    hideWarningMessage
 }

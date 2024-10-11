@@ -61,6 +61,9 @@ body.darkMode .score-total {
   color: var(--soft-blue);
 }
 
+body.darkMode .warning-message{
+  color: var(--pure-white);
+}
 
 @media (max-width: 768px) {
   body.darkMode {

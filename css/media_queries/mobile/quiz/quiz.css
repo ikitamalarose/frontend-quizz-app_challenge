@@ -141,7 +141,7 @@
   /* main end */
 
   /* question start*/
- 
+
   .question-number {
     margin-bottom: 0.75rem;
   }
@@ -205,7 +205,7 @@
   }
 
   /* mangement of correct and incorrect optionnswer end */
-  
+
   .question-option-letter {
     width: 2.5rem;
     height: 2.5rem;
@@ -238,8 +238,8 @@
     visibility: hidden;
   }
 
-  .score-actions,
-  .question-actions {
+  .question-submit-button,
+  .score-restart-button {
     height: 4rem;
 
     display: flex;
@@ -249,11 +249,8 @@
 
     background: var(--primary-purple);
     border-radius: 0.75rem;
-  }
 
-  .question-submit-button,
-  .score-restart-button {
-    background: none;
+    /*  background: none; */
     border: none;
     color: var(--pure-white);
     font-weight: var(--font-weight-medium);
@@ -286,7 +283,7 @@
     flex-direction: row;
     align-items: center;
   }
-  
+
   .score-icon {
     width: 2.5rem;
     height: 2.5rem;
@@ -343,4 +340,22 @@
   }
 
   /* score end */
+
+  #warning-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.75rem;
+  }
+
+  .warning-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .warning-message {
+    font-size: 15px;
+    font-weight: var(--font-weight-medium);
+    color: var(--vivid-red);
+  }
 }

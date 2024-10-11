@@ -235,20 +235,18 @@
   }
 
   .quiz__option {
-    position: relative;
-    height: 4rem;
-
     display: flex;
     flex-direction: row;
-    background: var(--pure-white);
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
 
+    height: 4rem;
+    background: var(--pure-white);
     padding: 0.75rem;
-
     border-radius: 0.75rem;
-
     margin-bottom: 0.75rem;
+    /*  position: relative; */
   }
 
   /* mangement of good answer start */
@@ -283,32 +281,33 @@
   .quiz__input {
     width: 2.5rem;
     height: 2.5rem;
-    padding: 14px;
+    padding: 0.875rem;
 
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: center;
     text-align: center;
 
     border-radius: 0.313rem;
-    margin-right: 0.5rem;
 
     color: var(--light-grey-blue);
     background: var(--light-grey);
   }
 
-  .quiz__input,
-  .quiz__label {
-    font-size: var(--font-size-body-s);
+  .quiz__label,
+  .quiz__input {
     font-weight: var(--font-weight-medium);
+  }
+
+  /*  .quiz__input, */
+  .quiz__label {
+    flex-grow: 1;
+    text-align: left;
   }
 
   .quiz__icon {
     width: 2rem;
     height: 2rem;
-    position: absolute;
-    right: 10px;
     visibility: hidden;
   }
 

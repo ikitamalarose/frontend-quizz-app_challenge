@@ -69,6 +69,12 @@ function updateSubmitButtonText() {
 
 function toggleOptionClickability() {
     const allOptions = document.querySelectorAll('.question-option');
+    const submitButton = document.querySelector('.question-submit-button');
+    
+    if (!submitButton) {
+        return;
+    }
+
     const submitButtonText = document.querySelector('.question-submit-button').textContent;
 
     allOptions.forEach(option => {

@@ -1,0 +1,10 @@
+@import "/css/base.css";
+@import "/css/variables.css";
+@import "/css/theme/theme.css";
+
+@import "/css/media_queries/menu-mobile.css";
+@import "/css/media_queries/menu-desktop.css";
+
+@import "/css/media_queries/quiz/quiz-mobile.css";
+@import "/css/media_queries/quiz/quiz-desktop.css";
+

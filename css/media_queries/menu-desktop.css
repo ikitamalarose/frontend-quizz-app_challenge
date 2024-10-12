@@ -18,7 +18,7 @@
     flex-direction: row;
     justify-content: flex-end;
     width: 1160px;
-    padding-top: 97px;
+    padding-top: 30px;
     margin-bottom: 99px;
   }
 
@@ -75,12 +75,12 @@
   /* menu header end*/
 
   /* main start  */
-  .main__content {
+.main__content {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: center;
-
+    
     width: 1160px;
     height: 456px;
   }
@@ -97,6 +97,7 @@
     font-size: var(--font-size-heading-l);
     line-height: var(--line-height-heading-m);
     margin-bottom: 48px;
+    
   }
 
   .content__subtitle {
@@ -122,7 +123,7 @@
     padding: 20px;
 
     text-decoration: none;
-    color: var(--dark-blue-grey);
+    color: var( --dark-blue-grey);
   }
 
   .menu__item:not(:last-of-type) {
@@ -173,6 +174,7 @@
   .header__title-icon--purple {
     background: var(--pale-lavender);
   }
+
 
   .quiz__content {
     display: flex;

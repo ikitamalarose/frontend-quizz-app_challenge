@@ -135,6 +135,38 @@ function hideWarningMessage() {
     }
 }
 
+function initializeProgressBar() {
+    const question_header = document.getElementById('question-header');
+
+    const progress_bar_container = document.createElement('div');
+    progress_bar_container.id = "progress-bar-container";
+
+    const progress_bar = document.createElement('span');
+    progress_bar.id = "progress-bar";
+
+    progress_bar_container.appendChild(progress_bar);
+    question_header.appendChild(progress_bar_container);
+
+}
+
+function updateProgressBar(questionIndex) {
+    const progress_bar = document.getElementById('progress-bar');
+    const percent = {
+        1: "20%",
+        2: "30%",
+        3: "40%",
+        4: "50%",
+        5: "60%",
+        6: "70%",
+        7: "80%",
+        8: "90%",
+        9: "100%"
+    };
+
+    progress_bar.style.width = percent[questionIndex];
+}
+
+
 export {
     getColorClass,
     getColorClassCard,
@@ -150,5 +182,7 @@ export {
     clearQuizContent,
     createWarningMessage,
     showWarningMessage,
-    hideWarningMessage
+    hideWarningMessage,
+    initializeProgressBar,
+    updateProgressBar
 }

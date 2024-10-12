@@ -12,7 +12,9 @@ import {
     clearQuizContent,
     createWarningMessage,
     showWarningMessage,
-    hideWarningMessage
+    hideWarningMessage,
+    initializeProgressBar,
+    updateProgressBar
 } from "./utils.js";
 
 
@@ -36,6 +38,9 @@ function createContentQuestion(quiz, total_question, quizzes) {
     const letters = ['A', 'B', 'C', 'D'];
     const quiz__content = document.getElementById('quiz__content');
 
+    const question_header = document.createElement('div');
+    question_header.id = "question-header";
+
     const question_number = document.createElement('p');
     question_number.textContent = `Question ${currentQuestionIndex + 1} of ${total_question}`;
     question_number.classList.add('question-number');
@@ -43,8 +48,10 @@ function createContentQuestion(quiz, total_question, quizzes) {
     const question_text = document.createElement('p');
     question_text.textContent = `${quiz.question}`;
     question_text.classList.add('question-text');
-    quiz__content.appendChild(question_number);
-    quiz__content.appendChild(question_text);
+
+    question_header.append(question_number, question_text);
+    quiz__content.append(question_header);
+    initializeProgressBar();
 
     const question_options_container = document.createElement('div');
     question_options_container.classList.add('question-options-container');
@@ -152,6 +159,7 @@ function loadNextQuestion() {
     if (currentQuestionIndex < questions_lenth) {
         const nextQuiz = current_data.questions[currentQuestionIndex];
         createContentQuestion(nextQuiz, questions_lenth, current_data);
+        updateProgressBar(currentQuestionIndex);
     } else {
         clearQuizContent();
         createScoreElement();

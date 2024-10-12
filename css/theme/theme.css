@@ -65,6 +65,11 @@ body.darkMode .warning-message{
   color: var(--pure-white);
 }
 
+
+body.darkMode #progress-bar-container{
+  background-color: var(--medium-blue-grey);
+}
+
 @media (max-width: 768px) {
   body.darkMode {
     background-image: url("/assets/images/pattern-background-mobile-dark.svg");

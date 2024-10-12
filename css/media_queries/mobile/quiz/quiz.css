@@ -142,6 +142,12 @@
 
   /* question start*/
 
+  #question-header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2.5rem;
+  }
+
   .question-number {
     margin-bottom: 0.75rem;
   }
@@ -153,6 +159,26 @@
     line-height: var(--line-height-heading-s);
 
     margin-bottom: 1.5rem;
+  }
+
+  #progress-bar-container {
+    height: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:flex-start;
+
+    background-color: var(--pure-white);
+    border-radius: 62.438rem;
+    padding: 0.25rem;
+    
+  }
+
+  #progress-bar {
+    height: 0.5rem;
+    width: 10%;
+    background-color: var(--primary-purple);
+    border-radius: 6.5rem;
   }
 
   .question-options-container {

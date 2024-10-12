@@ -115,6 +115,7 @@
   .content__menu {
     display: flex;
     flex-direction: column;
+    margin-bottom: 0.313rem;
   }
 
   .menu__item {

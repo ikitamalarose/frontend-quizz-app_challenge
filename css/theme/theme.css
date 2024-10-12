@@ -69,10 +69,16 @@ body.darkMode .warning-message{
 body.darkMode #progress-bar-container{
   background-color: var(--medium-blue-grey);
 }
-
+body.darkMode .attribution pre{
+  color: var(--pure-white);
+}
 @media (max-width: 768px) {
   body.darkMode {
     background-image: url("/assets/images/pattern-background-mobile-dark.svg");
+  }
+
+  body.darkMode #attribution pre{
+    color: var(--pure-white);
   }
 }
 

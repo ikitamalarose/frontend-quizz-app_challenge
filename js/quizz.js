@@ -14,7 +14,8 @@ import {
     showWarningMessage,
     hideWarningMessage,
     initializeProgressBar,
-    updateProgressBar
+    updateProgressBar,
+    createAttributionElement
 } from "./utils.js";
 
 
@@ -93,6 +94,7 @@ function createContentQuestion(quiz, total_question, quizzes) {
     question_submit_button.classList.add('question-submit-button');
 
     question_options_container.appendChild(question_submit_button);
+    createAttributionElement(question_options_container);
 
     question_submit_button.addEventListener('click', function () {
         isCorrectAnswer(currentlySelectedOption);
@@ -240,6 +242,7 @@ function createScoreElement() {
     score_restart_button.classList.add('score-restart-button');
 
     score_content.appendChild(score_restart_button);
+    createAttributionElement(score_content);
 
     score_restart_button.addEventListener('click', function () {
         reset();

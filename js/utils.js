@@ -166,6 +166,22 @@ function updateProgressBar(questionIndex) {
     progress_bar.style.width = percent[questionIndex];
 }
 
+function createAttributionElement(dom_element) {
+
+    const attribution = document.createElement('div')
+    attribution.classList.add('attribution');
+
+    const blank_space = document.createElement('pre');
+    blank_space.textContent = "Coded by ";
+
+    const attribution_link = document.createElement('a');
+    attribution_link.href = "https://www.frontendmentor.io/profile/ikitamalarose";
+    attribution_link.textContent = "Larose IKITAMA";
+    
+    attribution.append(blank_space,attribution_link);
+    dom_element.appendChild(attribution);
+}
+
 
 export {
     getColorClass,
@@ -184,5 +200,6 @@ export {
     showWarningMessage,
     hideWarningMessage,
     initializeProgressBar,
-    updateProgressBar
+    updateProgressBar,
+    createAttributionElement
 }

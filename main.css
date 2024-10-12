@@ -1,6 +1,6 @@
-
-/* @import "/css/base.css";
+@import "/css/base.css";
 @import "/css/variables.css";
-@import "/css/media_queries/mobile/menu.css"; */
-@import "/css/media_queries/media-queries.css";
+@import "/css/theme/theme.css";
+@import "/css/media_queries/menu-mobile.css";
+@import "/css/media_queries/menu-desktop.css";
 

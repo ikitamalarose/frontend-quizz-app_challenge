@@ -169,6 +169,9 @@ function loadNextQuestion() {
 function createScoreElement() {
     const quiz__content = document.getElementById('quiz__content');
 
+    const score_header = document.createElement('div');
+    score_header.id = "score-header";
+
     const score_message = document.createElement('p');
     score_message.textContent = 'Quiz completed';
     score_message.classList.add('score-message');
@@ -177,13 +180,18 @@ function createScoreElement() {
     const score_message_highlight = document.createElement('strong');
     score_message_highlight.textContent = "You scored...";
     score_message_highlight.classList.add('score-message-highlight');
-    quiz__content.appendChild(score_message_highlight);
 
+    score_header.append(score_message, score_message_highlight);
+    quiz__content.appendChild(score_header);
+
+    const score_content = document.createElement('div');
+    score_content.id = "score-content";
 
     const score_card = document.createElement('div');
     score_card.classList.add('score-card');
 
-    quiz__content.appendChild(score_card);
+    score_content.appendChild(score_card);
+    quiz__content.appendChild(score_content);
 
     const score_card_header = document.createElement('div');
     score_card_header.classList.add('score-card-header');
@@ -231,7 +239,7 @@ function createScoreElement() {
     score_restart_button.textContent = "Play Again";
     score_restart_button.classList.add('score-restart-button');
 
-    quiz__content.appendChild(score_restart_button);
+    score_content.appendChild(score_restart_button);
 
     score_restart_button.addEventListener('click', function () {
         reset();

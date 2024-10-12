@@ -1,3 +1,6 @@
+@import "/css/base.css";
+@import "/css/variables.css";
+@import "/css/theme/theme.css";
 @media (max-width: 768px) {
   /* body start */
 
@@ -117,24 +120,12 @@
     width: 20.438rem;
   }
 
-  .content__left,
   .quiz__content {
     display: flex;
     flex-direction: column;
 
     margin-bottom: 2.5rem;
   }
-
-  .content__title {
-    font-size: var(--font-size-heading-m);
-    line-height: var(--line-height-heading-m);
-    margin-bottom: 1rem;
-  }
-
-  .content__subtitle {
-    font-style: var(--font-weight-regular-italic);
-  }
-
   /* main end */
 
   /* question start*/
@@ -163,12 +154,11 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content:flex-start;
+    justify-content: flex-start;
 
     background-color: var(--pure-white);
     border-radius: 62.438rem;
     padding: 0.25rem;
-    
   }
 
   #progress-bar {
@@ -198,8 +188,8 @@
     border-radius: 0.75rem;
     margin-bottom: 0.75rem;
   }
-
   /* mangement of correct and incorrect option start */
+
   .question-option--selected {
     border: 3px solid var(--primary-purple);
   }
@@ -273,14 +263,28 @@
     background: var(--primary-purple);
     border-radius: 0.75rem;
 
-    /*  background: none; */
     border: none;
     color: var(--pure-white);
     font-weight: var(--font-weight-medium);
     font-size: 1.125rem;
   }
 
+  .score-restart-button{
+    width: 20.125rem;
+  }
+
   /* Score start */
+  #score-header{
+    display: flex;
+    flex-direction: column;
+  }
+
+  #score-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
   .score-message,
   .score-message-highlight {
     font-size: 2.5rem;
@@ -377,7 +381,7 @@
   }
 
   .warning-message {
-    font-size: 15px;
+    font-size: 0.938rem;
     font-weight: var(--font-weight-medium);
     color: var(--vivid-red);
   }

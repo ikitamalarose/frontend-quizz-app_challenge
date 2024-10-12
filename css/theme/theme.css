@@ -75,3 +75,9 @@ body.darkMode #progress-bar-container{
     background-image: url("/assets/images/pattern-background-mobile-dark.svg");
   }
 }
+
+@media (min-width: 768px) {
+  body.darkMode {
+    background-image: url("/assets/images/pattern-background-desktop-dark.svg");
+  }
+}

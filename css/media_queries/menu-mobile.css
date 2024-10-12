@@ -50,6 +50,7 @@
   #lightModeButton {
     margin-right: 0.6rem;
   }
+  
   #darkModeButton {
     margin-left: 0.5rem;
   }
@@ -132,7 +133,7 @@
     background: var(--pure-white);
 
     text-decoration: none;
-    color: black;
+    color: var( --dark-blue-grey);
   }
 
   .menu__item:not(:last-of-type) {

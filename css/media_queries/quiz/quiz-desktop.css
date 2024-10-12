@@ -105,13 +105,6 @@
   /* menu header end*/
 
   /* main start  */
-  .main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
   .main__content {
     display: flex;
     flex-direction: row;

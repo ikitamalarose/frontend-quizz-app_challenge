@@ -22,7 +22,7 @@
     justify-content: space-between;
     width: 1160px;
     padding-top: 30px;
-    margin-bottom: 85px;
+    margin-bottom: 60px;
   }
 
   .header__title {
@@ -118,18 +118,16 @@
   /* quiz start */
   .quiz__content {
     display: grid;
-    grid-template-columns: auto(2fr);
-    grid-template-rows: auto(2fr);
+    grid-template-columns: 475px 564px;
+    grid-template-rows: 564px 40px;
     column-gap: 131px;
-    row-gap: 31px;
+    row-gap: 10px;
   }
   /* quiz end */
 
   /* question start*/
 
   #question-header {
-    width: 475px;
-    height: 452px;
     display: flex;
     flex-direction: column;
     grid-column: 1/2;
@@ -172,8 +170,6 @@
   .question-options-container {
     grid-column: 2/3;
     grid-row: 1/2;
-
-    height: 564px;
 
     display: flex;
     flex-direction: column;
@@ -287,9 +283,10 @@
     cursor: pointer;
   }
 
-  .question-submit-button:hover .question-option-letter {
-    color: var(--primary-purple);
-    background: var(--pale-lavender);
+  .question-submit-button:hover,
+  .score-restart-button:hover {
+    color: var(--pure-white);
+    background: #D394FA;
   }
 
   /* Score start */
